@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">daalgavar2</string>
+    <string name="text_header_reply">msg is received</string>
+    <string name="button_main">Click me</string>
+    <string name="editText_main">message here</string>
+    <string name="editText_second">clickerbaby</string>
+    <string name="button_second">here</string>
+    <string name="text_header">header here</string>
+    <string name="number">0</string>
+    <string name="count">count</string>
+    <string name="enter_text_here">text</string>
+</resources>
