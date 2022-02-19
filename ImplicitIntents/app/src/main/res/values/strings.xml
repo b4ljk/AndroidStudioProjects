@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Implicit Intents</string>
+    <string name="button_uri">open website</string>
+    <string name="button_share">Share text</string>
+    <string name="button_loc">Open location</string>
+    <string name="share_text_with">share this text with:</string>
+</resources>
