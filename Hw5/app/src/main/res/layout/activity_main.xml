@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/operand_one_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/type_operand_one_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/operand_two_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/operand_two_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="17dp"
+        android:hint="@string/type_operand_two_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/operation_mul_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operand_one_edit_text"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/operation_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:hint="result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operation_add_btn"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/operation_div_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:onClick="onDiv"
+        android:text="@string/div_operation_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operand_two_edit_text" />
+
+    <Button
+        android:id="@+id/operation_mul_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:onClick="onMul"
+        android:text="@string/mul_operation_text"
+        app:layout_constraintStart_toEndOf="@+id/operation_div_btn"
+        app:layout_constraintTop_toBottomOf="@+id/operand_two_edit_text" />
+
+    <Button
+        android:id="@+id/operation_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:onClick="onAdd"
+        android:text="@string/add_operation_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operation_div_btn" />
+
+    <Button
+        android:id="@+id/operation_sub_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:onClick="onSub"
+        android:text="@string/sub_operation_text"
+        app:layout_constraintStart_toEndOf="@+id/operation_add_btn"
+        app:layout_constraintTop_toBottomOf="@+id/operation_mul_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hw5</string>
+    <string name="mul_operation_text">urjih</string>
+    <string name="div_operation_text">huvaah</string>
+    <string name="sub_operation_text">hasah</string>
+    <string name="add_operation_text">nemeh</string>
+    <string name="type_operand_two_hint">secondint</string>
+    <string name="type_operand_one_hint">firstint</string>
+    <string name="computationError">aldaagarlaa</string>
+</resources>
