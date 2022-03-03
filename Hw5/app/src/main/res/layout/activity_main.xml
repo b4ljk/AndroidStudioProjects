@@ -7,6 +7,16 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/operation_pow_btn"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="onPow"
+        android:text="Zereg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operation_add_btn" />
+
     <EditText
         android:id="@+id/operand_one_edit_text"
         android:layout_width="match_parent"
@@ -48,8 +58,8 @@
         android:id="@+id/operation_result_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="84dp"
         android:hint="result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operation_add_btn"
@@ -57,7 +67,7 @@
 
     <Button
         android:id="@+id/operation_div_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="18dp"
@@ -68,7 +78,7 @@
 
     <Button
         android:id="@+id/operation_mul_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="18dp"
@@ -79,7 +89,7 @@
 
     <Button
         android:id="@+id/operation_add_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="9dp"
@@ -90,7 +100,7 @@
 
     <Button
         android:id="@+id/operation_sub_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="9dp"
