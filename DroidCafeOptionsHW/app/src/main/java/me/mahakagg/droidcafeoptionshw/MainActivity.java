@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        //hi testing git
+        
 
         switch (item.getItemId()) {
             case R.id.action_order:

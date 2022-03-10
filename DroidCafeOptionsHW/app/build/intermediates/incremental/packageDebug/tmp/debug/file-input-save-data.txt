@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Mar 11 00:13:58 ULAT 2022
+#Fri Mar 11 00:18:06 ULAT 2022
 0.base=C\:\\Users\\Ekzy\\AndroidStudioProjects\\DroidCafeOptionsHW\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
 count=1

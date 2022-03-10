@@ -1,4 +1,4 @@
-#Fri Mar 11 00:13:58 ULAT 2022
+#Fri Mar 11 00:18:06 ULAT 2022
 base.0=C\:\\Users\\Ekzy\\AndroidStudioProjects\\DroidCafeOptionsHW\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 path.0=classes.dex
