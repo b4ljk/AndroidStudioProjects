@@ -1,7 +1,10 @@
 package com.example.hw5;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
@@ -10,8 +13,18 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    @Before
+    public void setUp() {
+        mCalculator= new Calculator();
     }
+    private Calculator mCalculator;
+    //    public void addition_isCorrect() {
+//        assertEquals(5, 2 + 2);
+//    }
+    @Test
+    public void testnumber1() {
+        double resultpow = mCalculator.pow(2d, 2d);
+        assertThat(resultpow, is(equalTo(4d)));
+    }
+
 }

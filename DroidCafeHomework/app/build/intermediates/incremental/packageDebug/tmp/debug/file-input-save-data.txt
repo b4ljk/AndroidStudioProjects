@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Fri Mar 11 00:11:16 ULAT 2022
+0.base=C\:\\Users\\Ekzy\\Desktop\\DroidCafeHomework\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+count=1
+0.baseType=DIRECTORY
+0.set=DEX

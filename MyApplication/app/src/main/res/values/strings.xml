@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="choco">Choco</string>
+    <string name="sprinkles">Sprinkles</string>
+    <string name="nuts">Nuts</string>
+    <string name="cherries">Cherries</string>
+    <string name="never_let_you_down">Never let you down</string>
+</resources>

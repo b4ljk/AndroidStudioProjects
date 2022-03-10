@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Thu Mar 10 23:45:31 ULAT 2022
+0.base=C\:\\Users\\Ekzy\\Desktop\\RecipesRecyclerView\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+count=1
+0.baseType=DIRECTORY
+0.set=DEX
