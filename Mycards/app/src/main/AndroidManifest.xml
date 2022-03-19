@@ -20,9 +20,16 @@
             android:label="Үг нэмэх"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".Optionsword"
+            android:exported="false"
+            android:label="Тохиргоо"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="ЦЭЭЖЛЭЕ">
+            android:label="ЦЭЭЖЛЭЕ"
+            android:theme="@style/AppTheme.NoActionBar">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

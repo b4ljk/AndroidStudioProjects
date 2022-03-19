@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mycards</string>
+    <string name="app_title">APP</string>
+    <string name="action_contact">Settings</string>
 </resources>
