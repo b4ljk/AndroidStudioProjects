@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -19,6 +20,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Button pre_button;
     Button update_button,deleteButton;
     TextView english, mongolian;
+    private static final int Filelocation = 100;
 
     int wordcounter = 0;
     MyDatabaseHelper myDB;
@@ -91,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         pre_button = findViewById(R.id.button5);
+
         pre_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -118,7 +127,9 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        english.setOnClickListener(textviewhider);
  mongolian = findViewById(R.id.textView2);
+        mongolian.setOnClickListener(textviewhider2);
         mongolian.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -136,6 +147,26 @@ public class MainActivity extends AppCompatActivity {
     hide();
     }
 
+    private View.OnClickListener textviewhider = new View.OnClickListener() {
+        public void onClick(View v) {
+
+            english.setVisibility((english.getVisibility() == View.VISIBLE)
+                    ? View.INVISIBLE : View.VISIBLE);
+
+
+        }
+    };
+    private View.OnClickListener textviewhider2 = new View.OnClickListener() {
+        public void onClick(View v) {
+
+           if(mongolian.getVisibility()==View.VISIBLE){
+               mongolian.setVisibility(View.GONE);
+           }else{
+               mongolian.setVisibility(View.VISIBLE);
+           }
+
+        }
+    };
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -161,6 +192,12 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(intent);
                 return true;
+            case R.id.addword:
+                Intent intent1 = new Intent(Intent.ACTION_GET_CONTENT);
+                intent1.setType("*/*");
+                intent1.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(intent1, Filelocation);
+                return true;
             default:
                 // Do nothing
         }
@@ -181,13 +218,50 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 1){
             recreate();
         }
+        if (requestCode == Filelocation) {
+
+            Uri urlforfile=data.getData();
+            Log.d("aibisda", urlforfile.toString());
+            BufferedReader reader;
+            InputStream is = null;
+            try {
+                is = getContentResolver().openInputStream(urlforfile);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            try {
+                String line = reader.readLine();
+                while((line = reader.readLine()) != null){String[] ugs = line.split(",");
+                    MyDatabaseHelper myDB = new MyDatabaseHelper(MainActivity.this);
+                    myDB.addBook(ugs[0].toString().trim(),
+                            ugs[1].toString().trim());
+//                    Log.d("aibisda2", ugs[1]); RECREATE hiihgui bol screen dahij zurahgui bsnaas aldaa ugj bn
+                    recreate();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return;
+        }
     }
 
     void storeDataInArrays(){
-
+        next_button = findViewById(R.id.button4);
+        pre_button = findViewById(R.id.button5);
+        deleteButton = findViewById(R.id.button3);
+        update_button = findViewById(R.id.button2);
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
             Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+
+            next_button.setEnabled(false);
+            pre_button.setEnabled(false);
+            deleteButton.setEnabled(false);
+            update_button.setEnabled(false);
+
 //            empty_imageview.setVisibility(View.VISIBLE);
 //            no_data.setVisibility(View.VISIBLE);
         }else{
@@ -197,6 +271,11 @@ public class MainActivity extends AppCompatActivity {
                 word_mon.add(cursor.getString(2));
 
             }
+            next_button.setEnabled(true);
+            pre_button.setEnabled(true);
+            deleteButton.setEnabled(true);
+            update_button.setEnabled(true);
+            //hamgiin suuld button nemegdev aldaagui
 //            empty_imageview.setVisibility(View.GONE);
 //            no_data.setVisibility(View.GONE);
         }
@@ -246,6 +325,7 @@ void confirmDialogfortext(){
         });
         builder.create().show();
     }
+    // das 1
     public void hide() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
