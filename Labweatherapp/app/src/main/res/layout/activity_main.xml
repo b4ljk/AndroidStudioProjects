@@ -209,7 +209,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastDay1"
-                    android:layout_width="170dp"
+                    android:layout_width="210dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/opensans"
                     android:paddingLeft="40dp"
@@ -230,7 +230,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastTemp1"
-                    android:layout_width="110dp"
+                    android:layout_width="77dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/opensans"
@@ -260,7 +260,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastDay2"
-                    android:layout_width="170dp"
+                    android:layout_width="210dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/opensans"
                     android:paddingLeft="40dp"
@@ -280,7 +280,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastTemp2"
-                    android:layout_width="110dp"
+                    android:layout_width="75dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/opensans"
@@ -311,7 +311,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastDay3"
-                    android:layout_width="170dp"
+                    android:layout_width="210dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/opensans"
                     android:paddingLeft="40dp"
@@ -332,7 +332,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastTemp3"
-                    android:layout_width="110dp"
+                    android:layout_width="74dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/opensans"
@@ -364,7 +364,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastDay4"
-                    android:layout_width="170dp"
+                    android:layout_width="210dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/opensans"
                     android:paddingLeft="40dp"
@@ -385,7 +385,7 @@
 
                 <TextView
                     android:id="@+id/id_forecastTemp4"
-                    android:layout_width="110dp"
+                    android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/opensans"

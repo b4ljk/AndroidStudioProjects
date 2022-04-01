@@ -14,6 +14,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -312,6 +314,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 Calendar calendar=new GregorianCalendar(Integer.parseInt(dateSplit[0]),Integer.parseInt(dateSplit[1])-1,Integer.parseInt(dateSplit[2]));
                 Date forecastDate=calendar.getTime();
                 String dateString=forecastDate.toString();
+
                 String[] forecastDateSplit=dateString.split(" ");
                 String date=forecastDateSplit[0]+", "+forecastDateSplit[1] +" "+forecastDateSplit[2];
                 setDataText(forecast, date);
@@ -335,7 +338,68 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 Date forecastDate=calendar.getTime();
                 String dateString=forecastDate.toString();
                 String[] forecastDateSplit=dateString.split(" ");
-                String date=forecastDateSplit[0]+", "+forecastDateSplit[1] +" "+forecastDateSplit[2];
+                switch (forecastDateSplit[0]){
+                    case "Sat":
+                        forecastDateSplit[0]="Бям";
+                        break;
+                    case "Sun":
+                        forecastDateSplit[0]="Ням";
+                        break;
+                    case "Mon":
+                        forecastDateSplit[0]="Дав";
+                        break;
+                    case "Tue":
+                        forecastDateSplit[0]="Мяг";
+                        break;
+                    case "Wed":
+                        forecastDateSplit[0]="Лха";
+                        break;
+                    case "Thu":
+                        forecastDateSplit[0]="Пүр";
+                        break;
+                    case "Fri":
+                        forecastDateSplit[0]="Баа";
+                        break;
+                }
+                switch (forecastDateSplit[1]){
+                    case "Jan":
+                        forecastDateSplit[1]="1-сарын";
+                        break;
+                    case "Feb":
+                        forecastDateSplit[1]="2-сарын";
+                        break;
+                    case "Mar":
+                        forecastDateSplit[1]="3-сарын";
+                        break;
+                    case "Apr":
+                        forecastDateSplit[1]="4-сарын";
+                        break;
+                    case "May":
+                        forecastDateSplit[1]="5-сарын";
+                        break;
+                    case "June":
+                        forecastDateSplit[1]="6-сарын";
+                        break;
+                    case "Jul":
+                        forecastDateSplit[1]="7-сарын";
+                        break;
+                    case "Aug":
+                        forecastDateSplit[1]="8-сарын";
+                        break;
+                    case "Sept":
+                        forecastDateSplit[1]="9-сарын";
+                        break;
+                    case "Oct":
+                        forecastDateSplit[1]="10-сарын";
+                        break;
+                    case "Nov":
+                        forecastDateSplit[1]="11-сарын";
+                        break;
+                    case "Dec":
+                        forecastDateSplit[1]="12-сарын";
+                        break;
+                }
+                String date=forecastDateSplit[0]+", "+forecastDateSplit[1] +"-"+forecastDateSplit[2];
                 setDataText(forecast, date);
 
 
